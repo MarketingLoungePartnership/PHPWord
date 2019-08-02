@@ -149,6 +149,11 @@ class ListItem extends AbstractStyle
     {
         // Check if legacy style already registered in global Style collection
         $numStyle = "PHPWordList{$this->listType}";
+
+        if ($this->numId) {
+            $numStyle .= $this->numId;
+        }
+
         if (Style::getStyle($numStyle) !== null) {
             $this->setNumStyle($numStyle);
 
